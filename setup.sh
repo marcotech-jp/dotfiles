@@ -32,9 +32,13 @@ ln -sfn ${PWD}/.codex/prompts ~/.codex/prompts
 ln -sf ${PWD}/.config/nvim ~/.config
 ln -sf ${PWD}/.config/starship.toml ~/.config/starship.toml
 
+mkdir -p ~/.config/git
+cp -f ${PWD}/.config/git/config ~/.config/git/config
+cp -f ${PWD}/.config/git/ignore ~/.config/git/ignore
+
 # .config dir
 shopt -s nullglob dotglob
-settings_list=(bat ghostty git lazygit mise tmux uv wezterm)
+settings_list=(bat ghostty lazygit mise tmux uv wezterm)
 [[ $(uname) == Darwin ]] && settings_list+=(karabiner)
 
 for setting in "${settings_list[@]}"; do
