@@ -37,3 +37,6 @@ keybind = super+shift+up=resize_split:up,20
 keybind = super+shift+down=resize_split:down,20
 
 keybind = super+w=close_surface
+
+# ghq+fzfのkeybindをcmdで実行するための処理
+keybind = super+g=text:\x07

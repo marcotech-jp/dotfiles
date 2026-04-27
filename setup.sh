@@ -39,7 +39,6 @@ cp -f ${PWD}/.config/git/ignore ~/.config/git/ignore
 # .config dir
 shopt -s nullglob dotglob
 settings_list=(bat ghostty lazygit mise tmux uv wezterm)
-[[ $(uname) == Darwin ]] && settings_list+=(karabiner)
 
 for setting in "${settings_list[@]}"; do
   mkdir -p "$HOME/.config/$setting"
