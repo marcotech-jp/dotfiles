@@ -1,0 +1,53 @@
+# ============display============
+theme = Solarized Osaka Night
+background-opacity = 0.85
+background-blur-radius = 15
+unfocused-split-opacity = 0.6
+cursor-style = block
+macos-titlebar-style = transparent
+macos-option-as-alt = true
+window-step-resize = false
+
+# ============font============
+font-family = UDEV Gothic 35NF
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
+# ============clipbord============
+copy-on-select = clipboard
+clipboard-read = allow
+clipboard-write = allow
+
+shell-integration = zsh
+# shell-integration-features = ssh-terminfo,ssh-env
+
+# ============keybind============
+keybind = super+w=close_surface
+
+# タブ間移動（デフォルト）
+# keybind = super+shift+right_bracket=next_tab
+# keybind = super+shift+left_bracket=previous_tab
+
+# 水平分割 / 垂直分割（デフォルト）
+# keybind = super+d=new_split:right
+# keybind = super+shift+d=new_split:down
+
+# Split 間移動（デフォルト）
+# keybind = super+alt+left=goto_split:left
+# keybind = super+alt+right=goto_split:right
+# keybind = super+alt+up=goto_split:top
+# keybind = super+alt+down=goto_split:bottomkeybind = super+left=goto_split:left
+
+# Split 間移動
+keybind = super+right=goto_split:right
+keybind = super+up=goto_split:top
+keybind = super+down=goto_split:bottom
+
+# Split サイズ調整
+keybind = super+shift+left=resize_split:left,20
+keybind = super+shift+right=resize_split:right,20
+keybind = super+shift+up=resize_split:up,20
+keybind = super+shift+down=resize_split:down,20
+
+keybind = ctrl+p=paste_from_clipboard

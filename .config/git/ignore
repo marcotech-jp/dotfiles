@@ -1,0 +1,27 @@
+.DS_Store
+.vscode
+build/**
+
+# python
+__pycache__
+.env
+.venv
+
+# secrets / credentials
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+.aws/
+.ssh/
+.gnupg/
+.netrc
+
+# AI / CLI local auth
+.claude/settings.local.json
+.codex/auth.json
+.config/gh/hosts.yml
+.config/gcloud/

@@ -1,0 +1,38 @@
+[settings]
+idiomatic_version_file_enable_tools = []
+python.uv_venv_auto = true
+experimental = true
+minimum_release_age = "7d"
+lockfile = true
+
+[tools]
+#----Core tools----
+usage = "latest"
+node = "lts"
+go = "latest"
+bun = "latest"
+
+#----Python----
+python = ["3.13", "3.11"]
+uv = "latest"
+ruff = "latest"
+
+#----AI Agent----
+# claude = "latest"
+# codex = "latest"
+
+#----command line tools----
+aws-cli = "latest"
+bat = "latest"
+eza = "latest"
+gh = "latest"
+ghq = "latest"
+fzf = "latest"
+pre-commit = "latest"
+
+#----nvim----
+neovim = "latest"
+rg = "latest"
+fd = "latest"
+imagemagick = "latest"
+lazygit = "latest"
