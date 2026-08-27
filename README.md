@@ -1,5 +1,7 @@
 # dotfiles
 
+## セットアップ
+
 ```sh
 git clone https://github.com/marcotech-jp/dotfiles.git ~/dotfiles
 cd ~/dotfiles
@@ -11,38 +13,50 @@ xcode-select --install
 ./setup.sh --update
 ```
 
-`setup.sh` は mise がなければインストールし、以降の処理を
-`mise bootstrap` に委譲する薄いエントリーポイントである。再実行しても、すでに
-目的の状態になっている項目はスキップされる。
+`setup.sh` は mise がなければ `~/.local/bin/mise` にインストールし、リポジトリの
+設定をtrustしてから `mise bootstrap` を実行する。再実行しても、すでに目的の
+状態になっている項目はスキップされる。
+
+ログインシェルの変更では `chsh` の認証を求められる場合がある。CIやコンテナなど
+ログインシェルを変更できない環境では、userステップを除外する。
+
+```sh
+./setup.sh --skip user
+```
 
 既存ファイルと競合する場合は、変更内容をプレビューしてから置き換える。
 
 ```sh
-mise bootstrap --dry-run
-mise bootstrap --force-dotfiles
+./setup.sh --dry-run
+./setup.sh --force-dotfiles
 ```
 
 ## bootstrapの対象
 
-- Ubuntuの基本パッケージとmacOSのtmux
-- UDEV Gothic 35NF、Migu 1M
-- dotfileのsymlink（一部のGit設定はマシンごとに編集できるようcopy）
-- powerlevel10k、zsh-autosuggestions、fast-syntax-highlighting
-- zshをログインシェルに設定
-- Bitwarden SSH Agent、CUDAの環境変数、共通SSHクライアント設定
-- `.config/mise/config.toml` の開発ツール
+- powerlevel10k、zsh-autosuggestions、fast-syntax-highlightingのclone
+- ホームディレクトリと `~/.config` 以下へのdotfileのsymlink
+- マシンごとに編集できるGit設定のcopy
+- `/bin/zsh` へのログインシェル変更
+- `.config/mise/config.toml` で管理する開発ツールのインストール
+
+管理しているツールはNode.js、Go、Bun、Python 3.13/3.11、uv、ruff、AWS CLI、
+bat、eza、GitHub CLI、ghq、fzf、pre-commit、Neovim、ripgrep、fd、ImageMagick、
+lazygit、usageである。
 
 個別の状態を確認したり、一部だけを適用したりすることもできる。
 
 ```sh
-mise bootstrap status
-mise bootstrap --only dotfiles
-mise bootstrap --only packages --update
-mise bootstrap --only tools
+./setup.sh status
+./setup.sh --only dotfiles
+./setup.sh --only repos
+./setup.sh --only tools --update
 ```
 
-Docker、CUDA、SSH鍵やSSHサーバー、OSポリシーなど、マシンごとの判断が必要な
-項目は [手動セットアップ](docs/manual-setup.md) に残している。
+## CI
+
+GitHub ActionsではUbuntu 24.04上で `setup.sh` の構文確認とbootstrapのスモーク
+テストを行う。ホスト環境のログインシェルは変更できないため、userステップは
+除外している。
 
 ## リポジトリのGit設定
 
