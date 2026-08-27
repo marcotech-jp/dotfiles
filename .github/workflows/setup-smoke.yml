@@ -30,7 +30,12 @@ jobs:
         run: |
           set -euo pipefail
           export HOME="$(mktemp -d)"
-          bash ./setup.sh
+          if [[ "$RUNNER_OS" == "Linux" ]]; then
+            # GitHub-hosted Ubuntu runners cannot authenticate chsh through PAM.
+            bash ./setup.sh --skip user
+          else
+            bash ./setup.sh
+          fi
 
 permissions:
   contents: read
