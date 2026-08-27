@@ -1,9 +1,35 @@
+min_version = "2026.8.14"
+
 [settings]
 idiomatic_version_file_enable_tools = []
 python.uv_venv_auto = true
 experimental = true
 minimum_release_age = "7d"
 lockfile = true
+
+[bootstrap.repos]
+"~/.zsh/fast-syntax-highlighting" = { url = "https://github.com/zdharma-continuum/fast-syntax-highlighting.git" }
+"~/.zsh/powerlevel10k" = { url = "https://github.com/romkatv/powerlevel10k.git" }
+"~/.zsh/zsh-autosuggestions" = { url = "https://github.com/zsh-users/zsh-autosuggestions.git" }
+
+[bootstrap.user]
+login_shell = "/bin/zsh"
+
+[dotfiles]
+# Home directory
+"~/.alias" = "../../.alias"
+"~/.bashrc" = "../../.bashrc"
+"~/.npmrc" = "../../.npmrc"
+"~/.p10k.zsh" = "../../.p10k.zsh"
+"~/.vimrc" = "../../.vimrc"
+"~/.zshrc" = "../../.zshrc"
+
+# XDG config files. Keep Git's writable copies out of the symlink tree.
+"~/.config" = { source = "../../.config", mode = "symlink-each", exclude = ["git/config", "git/ignore"] }
+
+# Keep Git config writable on each machine.
+"~/.config/git/config" = { source = "../git/config", mode = "copy" }
+"~/.config/git/ignore" = { source = "../git/ignore", mode = "copy" }
 
 [tools]
 #----Core tools----

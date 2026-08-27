@@ -25,3 +25,5 @@ id_ed25519
 .codex/auth.json
 .config/gh/hosts.yml
 .config/gcloud/
+
+mise.local.toml

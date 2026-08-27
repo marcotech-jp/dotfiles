@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "setup.sh"
+      - ".config/mise/config.toml"
       - ".github/workflows/setup-smoke.yml"
   workflow_dispatch:
 
