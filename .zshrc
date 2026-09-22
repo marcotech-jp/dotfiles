@@ -1,8 +1,8 @@
 # -----------Powerlevel10k instant prompt-----------
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # -----------Environment-----------
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -38,8 +38,8 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}=
 autoload -U colors
 colors
 
-source "$HOME/.zsh/powerlevel10k/powerlevel10k.zsh-theme"
-[[ -f "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
+# source "$HOME/.zsh/powerlevel10k/powerlevel10k.zsh-theme"
+# [[ -f "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
 
 # -----------Plugins-----------
 source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
@@ -82,3 +82,7 @@ function ghq-fzf() {
 }
 zle -N ghq-fzf
 bindkey '^g' ghq-fzf
+
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi

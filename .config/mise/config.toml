@@ -9,7 +9,7 @@ lockfile = true
 
 [bootstrap.repos]
 "~/.zsh/fast-syntax-highlighting" = { url = "https://github.com/zdharma-continuum/fast-syntax-highlighting.git" }
-"~/.zsh/powerlevel10k" = { url = "https://github.com/romkatv/powerlevel10k.git" }
+# "~/.zsh/powerlevel10k" = { url = "https://github.com/romkatv/powerlevel10k.git" }
 "~/.zsh/zsh-autosuggestions" = { url = "https://github.com/zsh-users/zsh-autosuggestions.git" }
 
 [bootstrap.user]
