@@ -1,6 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
+$os\
 $directory\
 $git_branch$git_status\
 $fill\
@@ -13,14 +14,25 @@ $character"""
 
 palette = 'ayu_dark'
 
-[fill]
-symbol = '─'
-style = 'fg:muted'
+[palettes.ayu_dark]
+accent = "#E6B450"
+foreground = "#BFBDB6"
+muted = "#5A6378"
+green = "#70BF56"
+blue = "#73B8FF"
+cyan = "#39BAE6"
+red = "#D95757"
+purple = "#D2A6FF"
 
-[aws]
-format = '[$symbol ($profile )(\($region\) )]($style)'
-style = 'bold blue'
-symbol = '🅰 '
+[os]
+disabled = true
+style = 'bold fg:blue'
+format = '[ $symbol]($style)'
+
+[os.symbols]
+Ubuntu = ' '
+Windows = ' '
+Macos = ' '
 
 [directory]
 style = "bold fg:accent"
@@ -38,10 +50,24 @@ format = '[ $symbol $branch ]($style)'
 style = "bold fg:green"
 format = '[($all_status$ahead_behind )]($style)'
 
+[fill]
+symbol = '─'
+style = 'fg:muted'
+
 [python]
 symbol = ""
 style = "fg:cyan"
 format = '[ $symbol( $version)(\(#$virtualenv\)) ]($style)'
+
+[aws]
+format = '[$symbol ($profile )(\($region\) )]($style)'
+style = 'bold blue'
+symbol = '🅰 '
+
+[cmd_duration]
+min_time = 3000
+style = 'fg:accent'
+format = '[ $duration ]($style)'
 
 [time]
 disabled = false
@@ -56,18 +82,3 @@ vimcmd_symbol = '[❮](bold fg:accent)'
 vimcmd_replace_one_symbol = '[❮](bold fg:purple)'
 vimcmd_replace_symbol = '[❮](bold fg:purple)'
 vimcmd_visual_symbol = '[❮](bold fg:accent)'
-
-[cmd_duration]
-min_time = 3000
-style = 'fg:accent'
-format = '[ $duration ]($style)'
-
-[palettes.ayu_dark]
-accent = "#E6B450"
-foreground = "#BFBDB6"
-muted = "#5A6378"
-green = "#70BF56"
-blue = "#73B8FF"
-cyan = "#39BAE6"
-red = "#D95757"
-purple = "#D2A6FF"
