@@ -1,5 +1,5 @@
 # ============display============
-theme = Solarized Osaka Night
+theme = ayu
 background-opacity = 0.85
 background-blur-radius = 15
 unfocused-split-opacity = 0.6
@@ -9,7 +9,7 @@ macos-option-as-alt = true
 window-step-resize = false
 
 # ============font============
-font-family = UDEV Gothic 35NF
+font-family = UDEV Gothic NF
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
