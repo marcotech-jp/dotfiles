@@ -9,6 +9,7 @@ $python\
 $aws\
 $cmd_duration\
 $time\
+$hostname\
 $line_break\
 $character"""
 
@@ -74,6 +75,13 @@ disabled = false
 time_format = "%R"
 style = "fg:foreground"
 format = '[  $time ]($style)'
+
+[hostname]
+ssh_only = true
+format = '[$ssh_symbol$hostname]($style) '
+ssh_symbol = '🌐 '
+style = 'bold yellow'
+disabled = false
 
 [character]
 success_symbol = '[❯](bold fg:accent)'
