@@ -69,7 +69,7 @@ else
 fi
 
 # -----------Aliases-----------
-[[ -f "$HOME/.alias" ]] && source "$HOME/.alias"
+[[ -f "$XDG_CONFIG_HOME/alias" ]] && source "$XDG_CONFIG_HOME/alias"
 
 # -----------ghq + fzf-----------
 function ghq-fzf() {

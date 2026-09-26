@@ -21,7 +21,6 @@ login_shell = "/bin/zsh"
 
 [dotfiles]
 # Home directory
-"~/.alias" = "../../.alias"
 "~/.bashrc" = "../../.bashrc"
 "~/.npmrc" = "../../.npmrc"
 "~/.p10k.zsh" = "../../.p10k.zsh"
