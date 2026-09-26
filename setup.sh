@@ -8,8 +8,8 @@ if command -v mise >/dev/null 2>&1; then
 elif [[ -x "$HOME/.local/bin/mise" ]]; then
   mise_bin="$HOME/.local/bin/mise"
 else
-  curl --fail --location --proto '=https' --tlsv1.2 https://mise.run | sh
-  mise_bin="$HOME/.local/bin/mise"
+  printf '%s\n' 'mise が見つかりません。README.md の手順に従って手動でインストールしてください。' >&2
+  exit 1
 fi
 
 "$mise_bin" trust .config/mise/config.toml

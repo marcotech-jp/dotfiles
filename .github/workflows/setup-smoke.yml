@@ -24,6 +24,7 @@ jobs:
         run: |
           set -euo pipefail
           export HOME="$(mktemp -d)"
+          curl --fail --location --proto '=https' --tlsv1.2 https://mise.run | sh
           # GitHub-hosted Ubuntu runners cannot authenticate chsh through PAM.
           bash ./setup.sh --skip user
 

@@ -15,6 +15,11 @@ lockfile = true
 [bootstrap.user]
 login_shell = "/bin/zsh"
 
+[bootstrap.packages]
+"apt:htop" = "latest"
+"apt:zsh" = "latest"
+"apt:starship" = "latest"
+
 [dotfiles]
 # Home directory
 "~/.alias" = "../../.alias"
@@ -46,6 +51,7 @@ ruff = "latest"
 #----AI Agent----
 # claude = "latest"
 # codex = "latest"
+"npm:@earendil-works/pi-coding-agent" = "latest"
 
 #----command line tools----
 aws-cli = "latest"

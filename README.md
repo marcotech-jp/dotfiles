@@ -2,33 +2,25 @@
 
 ## セットアップ
 
+mise は事前に手動でインストールする。
+<https://mise.jdx.dev/>
+
 ```sh
-git clone https://github.com/marcotech-jp/dotfiles.git ~/dotfiles
+mkdir -p  ~/work/github.com/marcotech-jp
+cd  ~/work/github.com/marcotech-jp
+git clone https://github.com/marcotech-jp/dotfiles.git
 cd ~/dotfiles
+./setup.sh
 
 # macOSではCommand Line Toolsを先にインストールする。
 xcode-select --install
 
-# miseのインストールを含めて、マシンをセットアップする。
+# マシンをセットアップする。
 ./setup.sh --update
-```
 
-`setup.sh` は mise がなければ `~/.local/bin/` にインストールし、リポジトリの
-設定をtrustしてから `mise bootstrap` を実行miseする。再実行しても、すでに目的の
-状態になっている項目はスキップされる。
-
-ログインシェルの変更では `chsh` の認証を求められる場合がある。CIやコンテナなど
-ログインシェルを変更できない環境では、userステップを除外する。
-
-```sh
+# ログインシェルの変更では `chsh` の認証を求められる場合がある。CIやコンテナなど
+# ログインシェルを変更できない環境では、userステップを除外する。
 ./setup.sh --skip user
-```
-
-既存ファイルと競合する場合は、変更内容をプレビューしてから置き換える。
-
-```sh
-./setup.sh --dry-run
-./setup.sh --force-dotfiles
 ```
 
 ## CI
