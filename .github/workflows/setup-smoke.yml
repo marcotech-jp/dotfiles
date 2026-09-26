@@ -30,6 +30,10 @@ jobs:
         run: |
           set -euo pipefail
           export HOME="$(mktemp -d)"
+          export XDG_CONFIG_HOME="$HOME/.config"
+          export XDG_DATA_HOME="$HOME/.local/share"
+          export XDG_CACHE_HOME="$HOME/.cache"
+          export XDG_STATE_HOME="$HOME/.local/state"
           curl --fail --location --proto '=https' --tlsv1.2 https://mise.run | sh
           # GitHub-hosted Ubuntu runners cannot authenticate chsh through PAM.
           "$HOME/.local/bin/mise" bootstrap --from "file://$GITHUB_WORKSPACE" --from-dir "$RUNNER_TEMP/dotfiles" --skip user --yes

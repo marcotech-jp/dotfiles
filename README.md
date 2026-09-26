@@ -11,14 +11,14 @@ macOS では Command Line Tools も先にインストールする。
 xcode-select --install
 ```
 
-リポジトリを取得してセットアップする（SSH 認証が必要）。
+HTTPS でリポジトリを取得してセットアップする（SSH 認証は不要）。
 
 ```sh
-mise bootstrap --from git@github.com:marcotech-jp/dotfiles.git \
+mise bootstrap --from https://github.com/marcotech-jp/dotfiles.git \
   --from-dir ~/work/github.com/marcotech-jp/dotfiles
 ```
 
-SSH 認証を使わない場合は URL を `https://github.com/marcotech-jp/dotfiles.git` に置き換える。
+SSH を使う場合は URL を `git@github.com:marcotech-jp/dotfiles.git` に置き換える。
 
 設定は用途ごとに分ける。
 
