@@ -3,9 +3,15 @@ name: setup-smoke
 on:
   push:
     paths:
-      - "setup.sh"
-      - ".config/mise/config.toml"
+      - "mise.toml"
+      - ".config/**"
+      - ".bashrc"
+      - ".zshrc"
+      - ".npmrc"
+      - ".p10k.zsh"
+      - ".vimrc"
       - ".github/workflows/setup-smoke.yml"
+      - ".github/scripts/check-commands.sh"
   workflow_dispatch:
 
 jobs:
@@ -17,7 +23,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Validate script syntax
-        run: bash -n ./setup.sh
+        run: bash -n .github/scripts/check-commands.sh
 
       - name: Run setup smoke test
         shell: bash
@@ -26,7 +32,14 @@ jobs:
           export HOME="$(mktemp -d)"
           curl --fail --location --proto '=https' --tlsv1.2 https://mise.run | sh
           # GitHub-hosted Ubuntu runners cannot authenticate chsh through PAM.
-          bash ./setup.sh --skip user
+          "$HOME/.local/bin/mise" bootstrap --from "file://$GITHUB_WORKSPACE" --from-dir "$RUNNER_TEMP/dotfiles" --skip user --yes
+          test "$(readlink -f "$HOME/.config/mise/config.toml")" = "$RUNNER_TEMP/dotfiles/.config/mise/config.toml"
+          "$HOME/.local/bin/mise" -C "$RUNNER_TEMP/dotfiles" bootstrap --only dotfiles --yes
+          export PATH="$HOME/.local/bin:$PATH"
+          # Exercise the installed tools and aliases outside the checkout in both shells.
+          cd "$RUNNER_TEMP"
+          mise exec -- bash "$GITHUB_WORKSPACE/.github/scripts/check-commands.sh"
+          mise exec -- zsh "$GITHUB_WORKSPACE/.github/scripts/check-commands.sh"
 
 permissions:
   contents: read
