@@ -18,7 +18,6 @@ login_shell = "/bin/zsh"
 [bootstrap.packages]
 "apt:htop" = "latest"
 "apt:zsh" = "latest"
-"apt:starship" = "latest"
 
 [dotfiles]
 # Home directory
@@ -54,6 +53,7 @@ ruff = "latest"
 "npm:@earendil-works/pi-coding-agent" = "latest"
 
 #----command line tools----
+starship = "latest"
 aws-cli = "latest"
 bat = "latest"
 eza = "latest"
