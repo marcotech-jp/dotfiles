@@ -27,14 +27,16 @@ starship = "latest"
 aws-cli = "latest"
 bat = "latest"
 eza = "latest"
+fzf = "latest"
+
+#----git----
 gh = "latest"
 ghq = "latest"
-fzf = "latest"
 pre-commit = "latest"
+lazygit = "latest"
 
 #----nvim----
 neovim = "latest"
 rg = "latest"
 fd = "latest"
 imagemagick = "latest"
-lazygit = "latest"
