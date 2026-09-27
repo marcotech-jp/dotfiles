@@ -1,0 +1,19 @@
+repos:
+  - repo: local
+    hooks:
+      - id: bash-syntax
+        name: Check Bash syntax
+        language: system
+        entry: bash -c 'for file in "$@"; do bash -n "$file" || exit; done' --
+        files: ^(\.bashrc|\.config/alias|\.github/scripts/.*\.sh)$
+      - id: zsh-syntax
+        name: Check Zsh syntax
+        language: system
+        entry: zsh -c 'for file in "$@"; do zsh -n "$file" || exit; done' --
+        files: ^(\.zshrc|\.p10k\.zsh|\.config/alias|\.github/scripts/check-commands\.sh)$
+      - id: gitleaks
+        name: Detect secrets with Gitleaks
+        language: system
+        entry: gitleaks git --pre-commit --redact --staged --verbose
+        pass_filenames: false
+        stages: [pre-commit]

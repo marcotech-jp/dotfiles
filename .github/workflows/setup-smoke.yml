@@ -22,9 +22,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Validate script syntax
-        run: bash -n .github/scripts/check-commands.sh
-
       - name: Run setup smoke test
         shell: bash
         run: |

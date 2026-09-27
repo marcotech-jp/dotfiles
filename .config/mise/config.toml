@@ -34,6 +34,7 @@ gh = "latest"
 ghq = "latest"
 pre-commit = "latest"
 lazygit = "latest"
+gitleaks = "latest"
 
 #----nvim----
 neovim = "latest"
