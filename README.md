@@ -1,5 +1,13 @@
 # dotfiles
 
+my dotfiles
+
+- shell: zsh
+- Terminal: Ghostty
+- Theme: Starship
+- Multiplexer: herde
+- Editor: Neovim
+
 ## セットアップ
 
 mise 2026.9.14 以降と Git を事前に手動でインストールする。

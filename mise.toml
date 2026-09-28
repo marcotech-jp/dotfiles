@@ -26,3 +26,36 @@ login_shell = "/bin/zsh"
 # Keep Git config writable on each machine.
 "~/.config/git/config" = { source = ".config/git/config", mode = "copy" }
 "~/.config/git/ignore" = { source = ".config/git/ignore", mode = "copy" }
+
+[bootstrap.macos.defaults.NSGlobalDomain]
+KeyRepeat = 2
+InitialKeyRepeat = 15
+"com.apple.keyboard.fnState" = true
+
+[bootstrap.macos.defaults."com.apple.dock"]
+orientation = "left"
+tilesize = 19.0
+largesize = 71.0
+magnification = true
+"show-recents" = false
+"show-process-indicators" = true
+"wvous-bl-corner" = 13
+"wvous-bl-modifier" = 0
+"wvous-br-corner" = 1
+"wvous-br-modifier" = 0
+
+[bootstrap.macos.defaults."com.apple.controlcenter"]
+AutoHideMenuBarOption = 2
+"NSStatusItem VisibleCC Battery" = true
+"NSStatusItem VisibleCC Clock" = true
+
+[bootstrap.macos.defaults."com.apple.menuextra.battery"]
+ShowPercent = true
+
+[bootstrap.macos.defaults."com.apple.menuextra.clock"]
+FlashDateSeparators = true
+Show24Hour = true
+ShowAMPM = true
+ShowDate = 1
+ShowDayOfWeek = true
+ShowSeconds = false

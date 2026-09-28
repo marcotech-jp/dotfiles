@@ -9,7 +9,6 @@ lockfile = true
 #----Core tools----
 usage = "latest"
 node = "lts"
-go = "latest"
 bun = "latest"
 
 #----Python----
@@ -28,6 +27,7 @@ aws-cli = "latest"
 bat = "latest"
 eza = "latest"
 fzf = "latest"
+herdr = "latest"
 
 #----git----
 gh = "latest"

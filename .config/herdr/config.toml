@@ -1,7 +1,6 @@
 onboarding = false
-
 [theme]
-name = "ayu"
+name = "dracula"
 auto_switch = false
 
 [theme.custom]
