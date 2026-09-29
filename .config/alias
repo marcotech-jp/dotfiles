@@ -32,7 +32,7 @@ alias h='cd ~/${home}'
 alias cx='codex'
 alias cxr='codex resume'
 alias cc='claude'
-alias ccu='bun x ccusage'
+alias ccu='ccusage'
 
 # IP addresses
 alias gip="dig +short myip.opendns.com @resolver1.opendns.com"

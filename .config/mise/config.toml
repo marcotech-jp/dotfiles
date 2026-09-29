@@ -9,7 +9,7 @@ lockfile = true
 #----Core tools----
 usage = "latest"
 node = "lts"
-bun = "latest"
+pnpm = "latest"
 
 #----Python----
 python = ["3.13", "3.11"]
@@ -20,6 +20,7 @@ ruff = "latest"
 # claude = "latest"
 # codex = "latest"
 "npm:@earendil-works/pi-coding-agent" = "latest"
+"npm:ccusage" = "latest"
 
 #----command line tools----
 starship = "latest"

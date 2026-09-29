@@ -86,3 +86,12 @@ bindkey '^g' ghq-fzf
 if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
+
+gh() {
+  if [[ "$1" == "repo" && "$2" == "clone" ]]; then
+    shift 2
+    ghq get "$@"
+  else
+    command gh "$@"
+  fi
+}
