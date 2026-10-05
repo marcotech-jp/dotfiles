@@ -19,7 +19,7 @@ ruff = "latest"
 #----AI Agent----
 # claude = "latest"
 # codex = "latest"
-"npm:@earendil-works/pi-coding-agent" = "latest"
+# "npm:@earendil-works/pi-coding-agent" = "latest"
 "npm:ccusage" = "latest"
 
 #----command line tools----

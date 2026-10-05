@@ -57,7 +57,7 @@ if [[ $(command -v eza) ]]; then
   alias ei="eza --git"
   alias ea="eza -la --icons --git"
   alias ee="eza -aahl --icons --git"
-  alias et="eza --tree -a -I 'node_modules|.git|.cache' --icons"
+  alias et="eza --tree --icons -a -I 'node_modules|.git|.cache'"
   alias ls=ei
   alias la=ea
   alias ll=ee

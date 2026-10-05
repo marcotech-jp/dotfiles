@@ -38,3 +38,6 @@ key = "ctrl+shift+g"
 type = "popup"
 command = "lazygit"
 description = "run lazygit"
+
+[experimental]
+kitty_graphics = true
