@@ -15,18 +15,6 @@ $time\
 $line_break\
 $character"""
 
-palette = 'ayu_dark'
-
-[palettes.ayu_dark]
-accent = "#E6B450"
-foreground = "#BFBDB6"
-muted = "#5A6378"
-green = "#70BF56"
-blue = "#73B8FF"
-cyan = "#39BAE6"
-red = "#D95757"
-purple = "#D2A6FF"
-
 [os]
 format = '[$symbol ]($style)'
 disabled = false
