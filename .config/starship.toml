@@ -3,13 +3,13 @@
 format = """
 $os\
 $username\
-$hostname\
 $directory\
 $git_branch$git_status\
 $fill\
 $python\
 $aws\
 $container\
+$hostname\
 $cmd_duration\
 $time\
 $line_break\
@@ -42,9 +42,10 @@ show_always = true
 format = '[$user]($style) '
 
 [hostname]
-format = '[$ssh_symbol$hostname]($style): '
+format = '[$ssh_symbol$hostname]($style) '
 
 [directory]
+truncate_to_repo = false
 truncation_symbol = '.../'
 
 [git_branch]
@@ -70,14 +71,14 @@ symbol = '─'
 style = 'fg:muted'
 
 [python]
-format = '[ $symbol( $version)(\(#$virtualenv\)) ]($style)'
+format = '[$symbol($version)(\(#$virtualenv\)) ]($style)'
 
 [aws]
 symbol = '🅰 '
 
 [cmd_duration]
 min_time = 3000
-format = '[ $duration ]($style)'
+format = '[$duration ]($style)'
 
 [time]
 disabled = false
