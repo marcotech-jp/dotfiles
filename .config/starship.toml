@@ -10,6 +10,7 @@ $python\
 $aws\
 $container\
 $hostname\
+${env_var.WSL_DISTRO_NAME}\
 $cmd_duration\
 $time\
 $line_break\
@@ -73,3 +74,7 @@ disabled = false
 time_format = "%R"
 style = "fg:foreground"
 format = '[  $time ]($style)'
+
+[env_var.WSL_DISTRO_NAME]
+format = '[WSL: $env_value]($style) '
+style = 'cyan'
