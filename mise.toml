@@ -21,11 +21,11 @@ login_shell = "/bin/zsh"
 "~/.zshrc" = ".zshrc"
 
 # XDG config files. Keep Git's writable copies out of the symlink tree.
-"~/.config" = { source = ".config", mode = "symlink-each", exclude = ["git/config", "git/ignore"] }
-
-# Keep Git config writable on each machine.
+"~/.config" = { source = ".config", mode = "symlink-each", exclude = ["git/config", "git/ignore", "karabiner"] }
 "~/.config/git/config" = { source = ".config/git/config", mode = "copy" }
 "~/.config/git/ignore" = { source = ".config/git/ignore", mode = "copy" }
+
+"~/.local/bin" = { source = "bin", mode = "symlink-each" }
 
 [bootstrap.macos.defaults.NSGlobalDomain]
 KeyRepeat = 2

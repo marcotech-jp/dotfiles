@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Herdr内で実行する
+: "${HERDR_PANE_ID:?Run this inside Herdr}"
+
+# 現在のペインを左上として使う
+LEFT_TOP="$HERDR_PANE_ID"
+
+# 1. 左右分割 (左60% : 右40%)
+RIGHT=$(herdr pane split "$LEFT_TOP" \
+  --direction right \
+  --no-focus | jq -r '.result.pane.pane_id')
+
+# 2. 左側を上下分割 (上70% : 下30%)
+LEFT_BOTTOM=$(herdr pane split "$LEFT_TOP" \
+  --direction down \
+  --ratio 0.8 \
+  --no-focus | jq -r '.result.pane.pane_id')
+
+# 3. 左上でClaude Code起動
+herdr pane run "$LEFT_TOP" "claude"
