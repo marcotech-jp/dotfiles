@@ -33,7 +33,8 @@ jobs:
           export XDG_STATE_HOME="$HOME/.local/state"
           curl --fail --location --proto '=https' --tlsv1.2 https://mise.run | sh
           # GitHub-hosted Ubuntu runners cannot authenticate chsh through PAM.
-          "$HOME/.local/bin/mise" bootstrap --from "file://$GITHUB_WORKSPACE" --from-dir "$RUNNER_TEMP/dotfiles" --skip user --yes
+          GITHUB_TOKEN='${{ github.token }}' \
+            "$HOME/.local/bin/mise" bootstrap --from "file://$GITHUB_WORKSPACE" --from-dir "$RUNNER_TEMP/dotfiles" --skip user --yes
           test "$(readlink -f "$HOME/.config/mise/config.toml")" = "$RUNNER_TEMP/dotfiles/.config/mise/config.toml"
           "$HOME/.local/bin/mise" -C "$RUNNER_TEMP/dotfiles" bootstrap --only dotfiles --yes
           export PATH="$HOME/.local/bin:$PATH"
